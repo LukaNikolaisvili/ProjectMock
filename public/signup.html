@@ -1,0 +1,112 @@
+<!--
+    file name: signup.html
+    author: Drew Hubble
+    date: NOV 11, 2022
+    description:
+        Sign-up page for new users
+ -->
+
+<!--------------------------------HTML code-------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Team chat</title>
+        <link rel="stylesheet" href="styles/index.css">
+        <script src="js/index.js" defer></script>
+    </head>
+
+<body>
+  <h2>Sign Up</h2>
+  <div class="sign-up-box">
+    <p>Username</p>
+    <div class="username">
+      <input id="username-id" type="text">
+    </div>
+    <p>Password</p>
+    <div class="password">
+      <input id="password-id" type="text">
+    </div>
+    <p>Re-Enter Password</p>
+    <div class="re-password">
+      <input id="re-password-id" type="text">
+    </div>
+    <p>Name</p>
+    <div class="name">
+      <input id="name-id" type="text">
+    </div>
+    <p>Phone Number</p>
+    <div class="phone-number">
+      <input id="phone-number-id" type="text">
+    </div>
+    <p></p>
+    <div>
+      <button id="sign-up-button" type="button" onclick="createUser()">Sign Up</button>
+    </div>
+    <div>
+      <p type="text" id="html_response"></p>
+      <p type="text" id="status"></p>
+    </div>
+  </div>
+
+  <!-------------------------------javascript code------------------------------------->
+
+  <script type="text/javascript">
+    // create user function
+    async function createUser() {
+      // define variables
+      var username = '';
+      var password = '';
+      var rePassword = '';
+      var name = '';
+      var phone = '';
+      var html_response = '';
+      // set variables to the html input values
+      username = document.getElementById("username-id").value;
+      password = document.getElementById("password-id").value;
+      rePassword = document.getElementById("re-password-id").value;
+      name = document.getElementById("name-id").value;
+      phone = document.getElementById("phone-number-id").value;
+
+      // if data is not entered send error message
+      if ((username == ''), (password == ''), (rePassword == ''), (name == ''), (phone == '')) {
+        document.getElementById("html_response").textContent = "Field(s) missing value(s).";
+      }
+      // if passwords do not match send error message
+      else if (password != rePassword){
+        document.getElementById("html_response").textContent = "Passwords do not match.";
+      }
+      // else send the user_key to the server
+      else {
+        const user_key = { username, password }; // define user_key
+        const send_key_options = { // define the options for 'send_key'
+          method: 'POST',
+          body: JSON.stringify(user_key),
+          headers: {"Content-Type": "application/json"}
+        };
+        fetch('/send_key', send_key_options); // send user_key to the server
+        const response = await fetch('/auth'); // run authentication from server
+        const user_status = await response.json(); // return the user_status from authentication
+        if (user_status.user_status == 'success') { // if user is authenticated (found), end loop
+          document.getElementById("html_response").textContent = "User Exists Already.";
+        }
+        if (user_status.user_status == 'failure') { // if user is not authenticated (found)
+          // create an object that contains user data
+          const data = { username, password, name, phone }; // create an object for the user data
+          // define the fetch options
+          const add_user_options = { // define options for posting user to database
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {"Content-Type": "application/json"}
+          };
+          fetch('/add_user', add_user_options); // use fetch to send user data, to add user to database
+          document.getElementById("html_response").textContent = "Account created.";
+        }
+        else {
+          document.getElementById("html_response").textContent = "Error..Account Not Created.";
+        }
+      }
+    }
+  </script>
+</body>
+</html>

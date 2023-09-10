@@ -1,0 +1,82 @@
+<!--
+    file name: login.html
+    author: Yanxin Wang & Drew Hubble
+    date: OCT 27, 2022
+    description:
+        Team Chat application for COIS 3850H project
+ -->
+
+<!-------------------------------HTML code------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Team chat</title>
+        <link rel="stylesheet" href="../styles/login.css">
+    </head>
+
+    <body>
+        <h2>Account Login</h2>
+        <div>
+            <label for="username">Username</label>
+            <input id="user-id" type="text">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input name="pass-id" type="text">
+        </div>
+        <div>
+            <div>
+                <input name="rememberme" type="checkbox" value="rememberme">
+                <label for="rememberme">Remember Me</label>
+            </div>
+            <button id="login-button" type="button" onclick="verifyUser()">Login</button>
+        </div>
+        <div>
+            <a href="#">Forgot Password?</a>
+        </div>
+        <p id="html_response" type="text"></p>
+
+        <!-------------------------------javascript code------------------------------------->
+
+        <script type="text/javascript">
+          // function to login the user
+          async function verifyUser() {
+            // define variables
+            var username = '';
+            var password = '';
+            var html_response = '';
+
+            // set variables to the html input values
+            username = document.getElementById("user-id").value;
+            password = document.getElementById("pass-id").value;
+
+            // if data is not entered send error message
+            if ((username == ''), (password == '')) {
+              document.getElementById("html_response").textContent = "Field(s) missing value(s).";
+            }
+            // else check user verification
+            else {
+              // create an object that contains user data
+              const user_key = { username, password };
+              const send_key_options = {
+                method: 'POST',
+                body: JSON.stringify(user_key),
+                headers: {"Content-Type": "application/json"}
+              };
+              fetch('/send_key', send_key_options); // send user_key to server
+              const response = await fetch('/auth'); // run authentication from server
+              const user_status = await response.json(); // return the user_status from authentication
+              if (user_status.user_status == 'success') { // if user is authenticated (found), user account exists
+                document.getElementById("response").textContent = "User verified.";
+                /*--redirect to profile page here--*/
+              }
+              // else user is not found
+              else {
+                document.getElementById("response").textContent = "Could not verify user.";
+              }
+            }
+          }
+        </script>
+    </body>
+</html>

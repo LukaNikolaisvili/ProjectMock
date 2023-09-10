@@ -1,0 +1,89 @@
+<!-- 
+    file name: profile.html
+    author: Yanxin Wang
+    date: Nov 5th, 2022
+    description:
+        Profile page, use js file to get data from database,
+        then fetch the whole profile page within the js file.   
+ -->
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxx Html start xxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Team chat</title>
+        <link rel="stylesheet" href="../styles/profile.css">
+        <script src="../js/profile.js" defer></script>
+    </head>
+
+<body >
+    <header>
+        <div class= "navbar">
+            <img src="../img/Logo.svg" alt="">
+            <div id="nav_bar_search">
+                <input id="nav_bar_search_input" type="text" placeholder=" Search..">
+                <button id="nav_bar_search_btn" type="button">Search</button>
+            </div>
+            <button id="darkmode" type="button">Dark Mode</button>
+            <button id="navbar_login_btn" type="button">Login/Sign Up</button>
+            <!--or open a new page
+            <a href="html/login.html">Login/Sign Up</a>
+            -->
+        </div>
+    </header>
+
+    <!-- section starts-->
+    <!--profile-->
+    <section id="profile">
+        <div id="profile_box">
+            <div id="profile_detail">
+                <button id="chang_password" type="submit" name ="change_password" style="display: none">Change Password</button>
+            </div> <!-- js code will fetch the profile page in this box -->
+            <div id="change_password_box"></div>
+        </div>
+    </section>
+
+    <!-- -->
+    <section id="s1">
+
+    </section>
+
+    <!-- -->
+    <section id="s2">
+
+    </section>
+
+    <!-- -->
+    <section id="s3">
+
+    </section>
+
+    <!-- -->
+    <section id="s4">
+
+    </section>
+
+    <!-- -->
+    <section id="s5">
+
+    </section>
+
+    <!-- -->
+    <section id="s6">
+
+    </section>
+
+    <!-- -->
+    <section id="s7">
+
+    </section>
+    <!-- section ends-->
+
+    <!-- footer -->
+    <footer>&copy; COIS 3850H TEAM 19</footer>
+
+</body>
+
+</html>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxx Html end xxxxxxxxxxxxxxxxxxxxxxxxxxxx -->

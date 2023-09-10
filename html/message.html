@@ -1,0 +1,50 @@
+<!-- 
+    file name: index.html
+    author: Yanxin Wang
+    date: OCT 27, 2022
+    description:
+        Team Chat application for COIS 3850H project   
+ -->
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxx Html start xxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Team chat</title>
+        <link rel="stylesheet" href="../styles/message.css">
+        <script src="../js/message.js" defer></script>
+    </head>
+
+    <!--
+        left panel show user icon and quick view message
+        right panel show full message after user click a left panel message
+    -->
+    <form id="message_layout" action="">
+        <div id="message_left_panel">
+            <div class="message_left_panel_user">
+                <img class="message_left_panel_user_icon" src="../img/Notification.svg" alt="">
+                <label for="message_left_panel_user_name">test user 1</label>
+            </div>
+            <div class="message_left_panel_user">
+                <img class="message_left_panel_user_icon" src="../img/Notification.svg" alt="">
+                <label for="message_left_panel_user_name">test user 2</label>
+            </div>
+        </div>
+        <div id="message_right_panel">
+            <div class="message_right_panel_messages">
+                <label for="message_right_panel_messages">test message 1</label><br>
+                <label for="message_right_panel_messages">test message 2</label>
+            </div>
+            <div id="message_right_panel_user_input">
+                <textarea name="" id="" placeholder="Type message here.."></textarea>
+                <button type="submit">Send</button>
+            </div>
+        </div>
+    </form>
+
+
+    </body>
+
+</html>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxx Html end xxxxxxxxxxxxxxxxxxxxxxxxxxxx -->

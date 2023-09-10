@@ -1,0 +1,105 @@
+
+/*layout of the whole form*/
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: sans-serif;
+    box-shadow: 0.1em 0.1em 0.3em 0.1em #888888;
+    border-right:2em solid #4285f4;
+    color: #4285f4;
+    padding: 1em;
+}
+
+form > div {
+    padding: 0.3em 0 0.3em;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+
+h2{
+    color: #4285f4;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/*for username and password input*/
+div:first-of-type input,
+div:nth-of-type(2) input{
+    background-color:#c2c2c2;
+    border: 0em;
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+div:first-of-type input:hover,
+div:nth-of-type(2) input:hover{
+    cursor: text;
+}
+
+/*for username and password label*/
+div:first-of-type label,
+div:nth-of-type(2) label{
+    color: black;
+    font-style: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+/*for checkbox, remember and forget password*/
+div:nth-last-of-type(2) div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/*for checkbox, remember and forget password*/
+div:nth-of-type(3){
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.6em;
+}
+
+/*for remember label*/
+div:nth-of-type(3) div label{
+    text-transform: none;
+    letter-spacing: 0em;
+    cursor: default;
+}
+
+/*for better visiual*/
+input:focus{
+    outline: none;
+}
+
+/*link and hover*/
+a{
+    color: #4285f4;
+    align-self: flex-start;
+}
+
+a:hover{
+    color: #00aa2b;
+    align-self: flex-start;
+}
+
+/*button and hover*/
+button{
+    text-transform: uppercase;
+    background-color: #4285f4;
+    height: 4em;
+    color: white;
+    font-size: 1em;
+    border: solid white 0.2em;
+    border-radius: 0.2em;
+    padding: 1em 1em;
+    justify-content: space-around;
+}
+
+button:hover{
+    background-color: #00aa2b;
+}

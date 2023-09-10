@@ -1,0 +1,110 @@
+<!--
+    file name: index.html
+    author: Yanxin Wang
+    date: OCT 27, 2022
+    description:
+        Team Chat application for COIS 3850H project
+ -->
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxx Html start xxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Team chat</title>
+        <link rel="stylesheet" href="styles/index.css">
+        <script src="js/index.js" defer></script>
+    </head>
+
+<body >
+    <header>
+        <div class= "navbar">
+            <img src="img/Logo.svg" alt="">
+            <div id="nav_bar_search">
+                <input id="nav_bar_search_input" type="text" placeholder=" Search..">
+                <button id="nav_bar_search_btn" type="button">Search</button>
+            </div>
+            <button id="darkmode" type="button">Dark Mode</button>
+            <a href="/signup.html">
+              <button id="navbar_signup_btn" type="button">Sign Up</button>
+            </a>
+            <a href="/login.html">
+              <button id="navbar_login_btn" type="button">Login</button>
+            </a>
+            <!--or open a new page
+            <a href="html/login.html">Login/Sign Up</a>
+            -->
+        </div>
+    </header>
+
+    <!-- section starts-->
+    <!--login-->
+    <section id="login_box">
+        <div id="login_box_modal_background">
+
+            <!-- Modal content -->
+            <div id="login_box_modal_content">
+                <span class="modal_close">&times;</span>
+                <iframe src="/login.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- message -->
+    <section id="message">
+        <div id="message_btn">
+            <button type="button"><img src="img/Message.svg" alt=""><br>Message</button>
+        </div>
+        <div id="message_modal_background">
+
+            <!-- Modal content -->
+            <div id="message_modal_content">
+                <div id="message_modal_title">
+                    <p>Message</p>
+                    <span class="modal_close2">&times;</span>
+                </div>
+                <iframe src="/message.html" frameborder="0"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- -->
+    <section id="s2">
+
+    </section>
+
+    <!-- -->
+    <section id="s3">
+
+    </section>
+
+    <!-- -->
+    <section id="s4">
+
+    </section>
+
+    <!-- -->
+    <section id="s5">
+
+    </section>
+
+    <!-- -->
+    <section id="s6">
+
+    </section>
+
+    <!-- -->
+    <section id="s7">
+
+    </section>
+    <!-- section ends-->
+
+    <!-- footer -->
+    <footer>&copy; COIS 3850H TEAM 19</footer>
+
+</body>
+
+</html>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxx Html end xxxxxxxxxxxxxxxxxxxxxxxxxxxx -->

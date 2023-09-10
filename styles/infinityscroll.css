@@ -1,0 +1,14 @@
+
+.container {
+    overflow: hidden;
+  }
+  
+  .sliding-background {
+    height: 500px;
+    width: 5076px;
+  }
+
+  .sliding-background {
+    height: 500px;
+    width: 5076px; /* The image width times 3 */
+  }

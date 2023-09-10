@@ -1,0 +1,69 @@
+
+/*variable*/
+:root{
+    --primary_blue: #0078D4;
+  }
+  
+html{
+    background-color: wheat;
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#message_layout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid var(--primary_blue) 0.2em;
+    padding: 0.5em;
+}
+
+#message_left_panel{
+    flex-direction: row;
+    color: white;
+    justify-content: space-around;
+    align-items:space-around;
+    padding: 0.2em;
+}
+.message_left_panel_user{
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(221, 221, 221);
+    color: black;
+    padding: 0.2em;
+}
+
+#message_right_panel{
+    flex-direction: column;
+    border: solid var(--primary_blue) 0.2em;
+    padding: 1em;
+}
+
+.message_right_panel_messages{
+    justify-content: right;
+}
+
+.message_right_panel_messages label{
+    flex-direction: column;
+    border: solid var(--primary_blue) 0.2em;
+}
+
+#message_right_panel_user_input{
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+}
+
+#message_right_panel_user_input textarea{
+    width: 97%;
+    resize: none;
+}
+
+#message_right_panel_user_input button{
+    width: 100%;
+}
